@@ -34,7 +34,7 @@ class Observer {
 			const [first] = data;
 			const { title } = first;
 
-			console.log("Title: " + title);
+			console.log("Title for exercise 4: " + title);
 		}
 	}
 }
@@ -75,12 +75,12 @@ async function fetchPosts() {
 	// Your async/await code here
 	var posts = await fetch(url);
 	posts = await posts.json();
-	console.log(posts);
+	return posts;
 }
 
 // Call the function to fetch posts
 console.log("Posts: ");
-fetchPosts();
+fetchPosts().then(posts => posts.forEach(post => console.log("Exercise 3: " + post.title)));
 
 console.groupEnd();
 
